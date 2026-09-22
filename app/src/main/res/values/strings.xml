@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">venus-adilah</string>
+    <string name="verif">Verifikasi Login</string>
+    <string name="buttonSend">Kirim Nomor</string>
+    <string name="pesanHasil">Kode berhasil dikirim!</string>
+    <string name="pesanPeriksa">Silahkan periksa nomor Anda</string>
+
+</resources>

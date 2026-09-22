@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:backgroundTint="#CCD5F6"
+    tools:context=".pertemuan_3.ThirdActivity">
+
+    <Button
+        android:id="@+id/btnKirim"
+        android:layout_width="250dp"
+        android:layout_height="49dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="320dp"
+        android:backgroundTint="@color/abu_gelap"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/buttonSend"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/inputNoTujuan"
+        android:layout_width="237dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:hint="Masukkan Nomor Teleponmu!"
+        android:inputType="number"
+        android:text="08"
+        app:layout_constraintBottom_toTopOf="@+id/btnKirim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.892" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="308dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_black"
+        android:text="@string/verif"
+        android:textAlignment="center"
+        android:textColor="#12254E"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/inputNoTujuan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="112dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/phone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

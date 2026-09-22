@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="abu_gelap">#61689E</color>
+    <color name="abu_gelap2">#444B57</color>
+    <color name="kuning">#E4E091</color>
+    <color name="baby_blue">#E3E7FF</color>
+    <color name="charcoal">#1f1f1f </color>
+    <color name="red">#A41B1B</color>
+    <color name="blue">#3456A6</color>
+
+
+</resources>
