@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.venus_adilah.databinding.ActivityMainBinding
 import com.example.venus_adilah.pertemuan_4.FourthActivity
+import com.example.venus_adilah.pertemuan_5.FifthActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -33,6 +34,11 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
             finish()
+        }
+
+        binding.btnToFifth.setOnClickListener{
+            val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
         }
     }
 
