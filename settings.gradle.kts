@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "venus-adilah"
+rootProject.name = "merkurius-aqila"
 include(":app")

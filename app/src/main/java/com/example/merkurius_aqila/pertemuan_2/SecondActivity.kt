@@ -1,4 +1,4 @@
-package com.example.venus_adilah.pertemuan_3
+package com.example.merkurius_aqila.pertemuan_2
 
 import android.os.Bundle
 import android.util.Log
@@ -10,15 +10,18 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.venus_adilah.R
-import com.example.venus_adilah.databinding.ActivityThirdBinding
+import com.example.merkurius_aqila.R
+import com.example.merkurius_aqila.databinding.ActivitySecondBinding
 
-class ThirdActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityThirdBinding
+
+class SecondActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySecondBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityThirdBinding.inflate(layoutInflater)
+
+        binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -26,26 +29,25 @@ class ThirdActivity : AppCompatActivity() {
             insets
         }
 
+
         // Inisialisasi komponen
-//        val inputNoTujuan: EditText = findViewById(R.id.inputNoTujuan)
-//        val btnKirim: Button = findViewById(R.id.btnKirim)
+        val inputNama = findViewById<EditText>(R.id.inputNama)
+        val btnSubmit = findViewById<Button>(R.id.btnSubmit)
 
-        binding.btnKirim.setOnClickListener {
-            //Mengambil value dari inputNama dan menampilkan di Logcat
-            val nomor = binding.inputNoTujuan.text
-            Log.e("Klik btnKirim","Tombol berhasil di tekan. Isi dari inputNomor = $nomor")
+        btnSubmit.setOnClickListener {
+            val nama = inputNama.text
+            Log.e("Klik btnSubmit","Tombol berhasil di tekan. Isi dari inputNama = $nama")
 
-            Toast.makeText(this, "Pesan berhasil dikirim ke $nomor", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Anda telah melakukan klik pada tombol Submit", Toast.LENGTH_SHORT).show()
         }
 
         supportActionBar?.apply {
-            title = "Activity Third"
+            title = "Activity Second"
             subtitle = "Ini adalah subtitle"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {

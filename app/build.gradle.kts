@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.venus_adilah"
+    namespace = "com.example.merkurius_aqila"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.example.venus_adilah"
+        applicationId = "com.example.merkurius_aqila" // Samakan dengan namespace
         minSdk = 27
         targetSdk = 37
         versionCode = 1
@@ -17,7 +17,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             optimization {

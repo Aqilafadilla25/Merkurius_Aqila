@@ -1,4 +1,4 @@
-package com.example.venus_adilah
+package com.example.merkurius_aqila
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.venus_adilah.databinding.ActivityMainBinding
-import com.example.venus_adilah.pertemuan_4.FourthActivity
-import com.example.venus_adilah.pertemuan_5.FifthActivity
+import com.example.merkurius_aqila.databinding.ActivityMainBinding
+import com.example.merkurius_aqila.pertemuan_4.FourthActivity
+import com.example.merkurius_aqila.pertemuan_5.FifthActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -36,9 +37,32 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
         binding.btnToFifth.setOnClickListener{
             val intent = Intent(this, FifthActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnLogout.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin logout?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    // clear SP
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+
+                    dialog.dismiss()
+                    finish()
+                }
+
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog", "Anda memilih Tidak!")
+                }
+                .show()
         }
     }
 

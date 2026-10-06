@@ -1,4 +1,4 @@
-package com.example.venus_adilah.pertemuan_3
+package com.example.merkurius_aqila.pertemuan_3
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -6,7 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.venus_adilah.R
+import com.example.merkurius_aqila.R
 
 class ThirdResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

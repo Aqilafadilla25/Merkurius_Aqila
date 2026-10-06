@@ -1,4 +1,4 @@
-package com.example.venus_adilah
+package com.example.merkurius_aqila
 
 import org.junit.Test
 

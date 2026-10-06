@@ -1,4 +1,4 @@
-package com.example.venus_adilah.pertemuan_5
+package com.example.merkurius_aqila.pertemuan_5
 
 import android.os.Bundle
 import android.webkit.WebViewClient
@@ -6,8 +6,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.venus_adilah.R
-import com.example.venus_adilah.databinding.ActivityWebViewBinding
+import com.example.merkurius_aqila.R
+import com.example.merkurius_aqila.databinding.ActivityWebViewBinding
 
 class WebViewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWebViewBinding
