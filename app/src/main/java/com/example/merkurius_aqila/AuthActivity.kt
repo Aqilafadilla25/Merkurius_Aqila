@@ -2,17 +2,12 @@ package com.example.merkurius_aqila
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.merkurius_aqila.databinding.ActivityAuthBinding
-import com.example.merkurius_aqila.databinding.ActivityFourthBinding
-import com.example.merkurius_aqila.pertemuan_5.FifthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
 
 class AuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthBinding
@@ -34,7 +29,7 @@ class AuthActivity : AppCompatActivity() {
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
             //Panggil Intent untuk ke MainActivity
-            val i = Intent(this, MainActivity::class.java)
+            val i = Intent(this, BaseActivity::class.java)
             startActivity(i)
         }
 
@@ -50,7 +45,7 @@ class AuthActivity : AppCompatActivity() {
 
 
                 // berpindah ke MainActivity
-                val i = Intent(this, MainActivity::class.java)
+                val i = Intent(this, BaseActivity::class.java)
                 startActivity(i)
                 finish()
             } else {

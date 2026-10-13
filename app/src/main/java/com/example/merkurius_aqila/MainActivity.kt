@@ -8,8 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.merkurius_aqila.databinding.ActivityMainBinding
-import com.example.merkurius_aqila.pertemuan_4.FourthActivity
-import com.example.merkurius_aqila.pertemuan_5.FifthActivity
+import com.example.merkurius_aqila.Home.pertemuan_4.FourthActivity
+import com.example.merkurius_aqila.Home.pertemuan_5.FifthActivity
+import com.example.merkurius_aqila.Home.pertemuan_6.SixthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +42,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnToFifth.setOnClickListener{
             val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToSixth.setOnClickListener{
+            val intent = Intent(this, SixthActivity::class.java)
             startActivity(intent)
         }
 
