@@ -10,16 +10,16 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.merkurius_aqila.Home.Pertemuan_11.EleventhTabsAdapter
 import com.example.merkurius_aqila.R
-import com.example.merkurius_aqila.databinding.ActivityEleventBinding
+import com.example.merkurius_aqila.databinding.ActivityEleventhBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 
 class EleventhActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityEleventBinding
+    private lateinit var binding: ActivityEleventhBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityEleventBinding.inflate(layoutInflater)
+        binding = ActivityEleventhBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets
             ->
