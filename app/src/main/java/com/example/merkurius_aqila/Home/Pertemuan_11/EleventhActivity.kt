@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.merkurius_aqila.Home.Pertemuan_11.EleventhTabsAdapter
 import com.example.merkurius_aqila.R
 import com.example.merkurius_aqila.databinding.ActivityEleventhBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -61,6 +60,15 @@ class EleventhActivity : AppCompatActivity() {
                     val badge = tab.getOrCreateBadge()
                     badge.isVisible = true
                     badge.number = 5
+                }
+                2 -> {
+                    tab.text = "Tab C"
+                    //Tambah Icon
+                    tab.icon = ContextCompat.getDrawable(this, R.drawable.ic_home)
+                    //Tambah Badge dengan nomor
+                    val badge = tab.getOrCreateBadge()
+                    badge.isVisible = true
+                    badge.number = 2
                 }
             }
         }.attach()

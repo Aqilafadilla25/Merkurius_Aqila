@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.example.merkurius_aqila.Home.Pertemuan_11.EleventhActivity
 import com.example.merkurius_aqila.Home.pertemuan_10.TenthActivity
 import com.example.merkurius_aqila.Home.pertemuan_4.FourthActivity
 import com.example.merkurius_aqila.Home.pertemuan_5.FifthActivity
@@ -62,7 +63,7 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
         binding.btnToElevent.setOnClickListener{
-            val intent = Intent(requireContext(), EleventActivity::class.java)
+            val intent = Intent(requireContext(), EleventhActivity::class.java)
             startActivity(intent)
         }
 
