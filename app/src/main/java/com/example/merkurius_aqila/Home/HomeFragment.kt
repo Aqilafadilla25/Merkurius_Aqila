@@ -13,7 +13,6 @@ import com.example.merkurius_aqila.Home.pertemuan_10.TenthActivity
 import com.example.merkurius_aqila.Home.pertemuan_4.FourthActivity
 import com.example.merkurius_aqila.Home.pertemuan_5.FifthActivity
 import com.example.merkurius_aqila.Home.pertemuan_6.SixthActivity
-import com.example.merkurius_aqila.R
 import com.example.merkurius_aqila.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -60,6 +59,10 @@ class HomeFragment : Fragment() {
         }
         binding.btnToTenth.setOnClickListener{
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToElevent.setOnClickListener{
+            val intent = Intent(requireContext(), EleventActivity::class.java)
             startActivity(intent)
         }
 
