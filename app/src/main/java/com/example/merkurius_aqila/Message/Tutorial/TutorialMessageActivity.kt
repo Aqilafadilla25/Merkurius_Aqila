@@ -22,5 +22,9 @@ class TutorialMessageActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val fragmentsList = listOf(Tutorial1Fragment(), Tutorial2Fragment(), Tutorial3Fragment())
+        val adapter = TutorialFragmentAdapter(this, fragmentsList)
+        binding.tutorialMessageViewPager.adapter = adapter
+        binding.dotIndicator.attachTo(binding.tutorialMessageViewPager)
     }
 }
