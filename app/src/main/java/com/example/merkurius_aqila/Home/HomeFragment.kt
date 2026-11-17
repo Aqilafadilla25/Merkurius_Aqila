@@ -8,14 +8,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.merkurius_aqila.Data.Api.CatFactApiClient
+import com.example.merkurius_aqila.Data.Api.PhotoApiClient
 import com.example.merkurius_aqila.Home.Pertemuan_11.EleventhActivity
+import com.example.merkurius_aqila.Home.Photo.PhotoAdapter
 import com.example.merkurius_aqila.Home.pertemuan_10.TenthActivity
 import com.example.merkurius_aqila.Home.pertemuan_4.FourthActivity
 import com.example.merkurius_aqila.Home.pertemuan_5.FifthActivity
 import com.example.merkurius_aqila.Home.pertemuan_6.SixthActivity
 import com.example.merkurius_aqila.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
@@ -36,6 +43,7 @@ class HomeFragment : Fragment() {
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Home"
+
         }
 
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
@@ -86,6 +94,43 @@ class HomeFragment : Fragment() {
                     Log.e("Info Dialog", "Anda memilih Tidak!")
                 }
                 .show()
+        }
+        binding.btnRefresh.setOnClickListener {
+            loadCatFact()
+    }
+        loadCatFact()
+
+        loadPhoto()
+    }
+    private fun loadCatFact() {
+        lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                binding.tvCatFact.text = "\"${response.fact}\""
+            } catch (e: Exception) {
+                binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
+        }
+    }
+    private fun loadPhoto() {
+        lifecycleScope.launch {
+            try {
+                val photos = PhotoApiClient.apiService.getPhotos()
+                val adapter = PhotoAdapter(photos)
+                binding.rvGallery.adapter = adapter
+
+                /** List Tampil Vertical*/
+                binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
+
+                /** List Tampil Horizontal */
+                //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+                /** List Tampil Grid */
+                //binding.rvGallery.layoutManager = GridLayoutManager(requireContext(),2)
+
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
